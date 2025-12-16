@@ -1,0 +1,847 @@
+Delivered-To: geetanjali1122330@gmail.com
+Received: by 2002:a05:6000:706:b0:3e8:3601:136d with SMTP id bs6csp167574wrb;
+        Mon, 15 Sep 2025 23:40:09 -0700 (PDT)
+X-Received: by 2002:a17:90b:3b42:b0:32b:c9c0:2a11 with SMTP id 98e67ed59e1d1-32de4e5cca6mr16616266a91.4.1758004808741;
+        Mon, 15 Sep 2025 23:40:08 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1758004808; cv=none;
+        d=google.com; s=arc-20240605;
+        b=MhJPck3PctUFd6sUX+Zkz3o8QK2dwre2xYyD/7hA2k4+4FuD4N1HXT7rqAWeCxSUyJ
+         fUirM+tnhH7HUX5NYvDutL1Vjrw46WC3pjF8T5xruyuLrwuKBoTZi/O6P7A12Wk68xPf
+         3eKiUd3Mku2qSbCGkee2jZ850gib8/4p6gugLvXwB2fCwRmn792ch5ybNjDbYrMtDZLa
+         svJBE0d+LkHjLO2Bec/j4oijd+X3FPqHSUh/hUi0Y7ZYbvwXpMcvLpXbFHU17MW0SaF7
+         KaTzw+9aN9H7oyphgvUQiKu3XhGXS2iOF9RCgg04ZmaZbHNulEbinYiDNopEcqSwwtEz
+         ZonQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=BfmHe32vBc7xoAibN49H8g6juKsO39CXvcDVjD38qHc=;
+        fh=ZL88FV48tZspCUjLpjgUkffXocRMAtyScnT1UP7bHv4=;
+        b=Sd7sFx+svIYTphDwqzhr3CoIw+wgmvNgf7LSTQigNwaxZ73uAnUmzOfU43EGEwNnEw
+         CkFMhptRi6K2d84PCRyBSlaGRG/mUGCHKu/AbFcGx2mEaOvAatXEfUxE1kP8PsCwXnHw
+         hfzO2aF5kVJH5Cou6O04k+0nn4hg2CPS5uofK/Hl12w6nl9C22GVa9HarEiLoU6cFuIT
+         7TOUBQ+wSZupyJbsqvbt8d4YzuAQxKF9PGJrwEMU3CuENJlerOqb3vXPc/tc3gklGlBH
+         PdmxnDMhlzPhhKQBcprX90pXn1W39i8mphDn+66FYTTu3+52ClBkY38AITGQRJqRGhLA
+         s+0g==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=hC3VWNRt;
+       spf=pass (google.com: domain of nema.g87@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=nema.g87@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <nema.g87@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 98e67ed59e1d1-32e74748c2bsor3017247a91.1.2025.09.15.23.40.08
+        for <geetanjali1122330@gmail.com>
+        (Google Transport Security);
+        Mon, 15 Sep 2025 23:40:08 -0700 (PDT)
+Received-SPF: pass (google.com: domain of nema.g87@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=hC3VWNRt;
+       spf=pass (google.com: domain of nema.g87@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=nema.g87@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1758004808; x=1758609608; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=BfmHe32vBc7xoAibN49H8g6juKsO39CXvcDVjD38qHc=;
+        b=hC3VWNRt2+6p6042lczL8KJMjyXIrE5wVUj9o+sQfpdBr9rlwvjkvNb6OLn5bpK/xL
+         Tofft1K/QzbLmawsUNJy5GaG7DaBaYvi8HzunJeRFGjRlBGpoPeo5qRbMvm7hIOXQidR
+         Sf02URgwsqB1ycdtLH0/O4+seO5oBWMya2dnBhJ/8xggtyvW7l64Hyj/HZzhSHMYJ4JZ
+         K/UCQm8pbIdaxg4SQVw4vD5ZTfc8P+FraDgy+I1p4RCW22CmVOM7QnK/+diu1APHyk3F
+         JqxslvPGeEOoyNnvj2uAq+5Pc/W0Ihx3t8FbMGrNmW3oX+WoVTc49xJTEmAFT/cbpqkI
+         WSIA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1758004808; x=1758609608;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=BfmHe32vBc7xoAibN49H8g6juKsO39CXvcDVjD38qHc=;
+        b=n+J2w1wUkkUckm5VgSBq8ojng0mV21wtJToCnLUWXtyZWD5NUU/e13q6HhRHq/3oQO
+         zPVz6KphN17dhT/xQkRSjIihwP2YRxjUtJuG6xTEfH9R7Dknx2T1OTwsx7tzGa4mCgeP
+         u2jDEvXXx3r1yF/slMEyralGuB9M3s9G3gJpg8MkJjaGjS8nzy7bAOf5zl6ZkOhdrhr3
+         DRp15TydSln/uABV8IQcoRHlUSD+vueTGmDGsAIg6DVlg9yzLsK8E8bDKMZDF/PgY6q0
+         baGwlZBi1Biu8LnSUV0MixdJs6qT1CXd5b+4xV3T3JlnGaexarZvH975tR0i675B2chQ
+         CDzQ==
+X-Gm-Message-State: AOJu0Yxk25gKXQ4UHOyh0SOEPX1+Z5XQhdwuSoFQlk6XgeS9WCLDfMaD
+	Ws2APOKU6oPmGHQEq+Ms9tbK6DRFTUx57nbcPKUA1Xr/32hafZYdYPvH95uwtkVc/3TWBFtxnkc
+	le0K6JG1cQgp2e8DQDD57k1zI4lN0XACWMeHm
+X-Gm-Gg: ASbGncvIm4jPqUhgCVJDDjHP03qxUU2CEoXkSLeKuraiJmGGCn+tzQpVYmCqCaX3HoL
+	s9uksaG8y/i3gfHf/DUG9uO7OmvEGNYKoFIz0CswkHHwnPIMuZP7nElmu2DQlwEiGRa+97bBJZ5
+	RJdY9bqe1GzgBg03GGYV60xOOjNa86/WwwS2sc0+ucO24JbB7RCccv4LYNnq+IXhySIqABGtXd0
+	djAKQ==
+X-Google-Smtp-Source: AGHT+IGVDtYRbB/4Jxu5MWweXzyIPglNfBdUN8/9kN2PRqgLuegtk0wQURUE0s10VylIfll+CmswA9r/+sIDy8T8Blw=
+X-Received: by 2002:a17:90b:4c4b:b0:32e:7512:b680 with SMTP id
+ 98e67ed59e1d1-32e7512b733mr5869185a91.1.1758004807653; Mon, 15 Sep 2025
+ 23:40:07 -0700 (PDT)
+MIME-Version: 1.0
+From: Gaurav Nema <nema.g87@gmail.com>
+Date: Tue, 16 Sep 2025 12:09:51 +0530
+X-Gm-Features: AS18NWBrCSViG1Hjxvd_AjObCiehEIwCdal5XFMxMsEw-_2Vx925PLVHlwzYhVM
+Message-ID: <CAFzgF16wjhe5wGi6ErD+U6wsju_2eRiMyBJKN392S5iLGcxdSA@mail.gmail.com>
+Subject: 
+To: Geetanjali Kushwaha <geetanjali1122330@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000012dca4063ee56484"
+
+--00000000000012dca4063ee56484
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html lang=3D"en">
+<head>
+  <meta charset=3D"utf-8" />
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1=
+" />
+  <title>Tesla Transformers (India) Ltd. =E2=80=94 Company Overview</title>
+  <meta name=3D"description" content=3D"Since 1972, TTIL has delivered reli=
+able
+power & distribution transformers and turnkey substations. ISO
+9001/14001/45001 certified, NABL-accredited testing, 8,000 MVA annual
+capacity, global reach.">
+  <style>
+    :root{
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      --text:#0e1222;
+      --muted:#56607a;
+      --primary:#0a5bd3;
+      --primary-ink:#083e91;
+      --accent:#00bfa6;
+      --border:#e4e8f0;
+      --ok:#18b26b;
+      --shadow:0 6px 20px rgba(10,91,211,.08);
+      --radius:16px;
+      --radius-lg:22px;
+      --wrap:1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe
+UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+      color:var(--text); background:var(--bg); line-height:1.55;
+    }
+    a{color:var(--primary); text-decoration:none}
+    .wrap{max-width:var(--wrap); margin:auto; padding:0 20px}
+    header{
+      position:sticky; top:0; z-index:50; background:rgba(255,255,255,.9);
+backdrop-filter:saturate(180%) blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between;
+gap:16px; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800;
+letter-spacing:.2px}
+    .logo{
+      width:34px;height:34px;border-radius:10px; display:inline-grid;
+place-items:center; color:#fff;
+      background:linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow:0 6px 16px rgba(10,91,211,.25);
+      font-weight:800;
+    }
+    .menu{display:flex; gap:18px; flex-wrap:wrap}
+    .menu a{color:var(--muted); font-weight:600}
+    .cta{display:flex; gap:10px}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px; padding:10px 16px;
+border-radius:12px; font-weight:700; border:1px solid var(--border);
+background:#fff;
+      box-shadow:var(--shadow);
+    }
+    .btn-primary{background:var(--primary); color:#fff;
+border-color:transparent}
+    .btn-outline{background:#fff; color:var(--primary-ink)}
+    /* Hero */
+    .hero{
+      position:relative; overflow:hidden; border-bottom:1px solid
+var(--border);
+      background:
+        radial-gradient(1400px 600px at 70% -10%, rgba(10,91,211,.18),
+transparent 60%),
+        radial-gradient(900px 500px at -10% 10%, rgba(0,191,166,.18),
+transparent 60%),
+        linear-gradient(180deg,#fff, #f9fbff);
+    }
+    .hero-inner{display:grid; grid-template-columns:1.1fr .9fr; gap:28px;
+padding:60px 0}
+    h1{font-size: clamp(28px, 4.8vw, 46px); line-height:1.08; margin:0 0
+14px}
+    .lead{font-size: clamp(15px, 2.2vw, 18px); color:var(--muted);
+max-width:60ch}
+    .hero-card{
+      background:var(--card); border:1px solid var(--border);
+border-radius:var(--radius-lg); padding:18px; box-shadow:var(--shadow);
+      display:grid; grid-template-columns:1fr 1fr; gap:14px;
+margin-top:22px;
+    }
+    .kpi{background:#fff; border:1px solid var(--border);
+border-radius:14px; padding:14px}
+    .kpi b{font-size:22px}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px; font-weight:700;
+color:#0a5d43; background:#e9f9f2; border:1px solid #c8f0e0; padding:6px
+10px; border-radius:999px;
+    }
+    /* Sections */
+    section{padding:56px 0}
+    .grid{display:grid; gap:18px}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-4{grid-template-columns:repeat(4,1fr)}
+    .card{
+      background:var(--card); border:1px solid var(--border);
+border-radius:var(--radius); padding:20px; box-shadow:var(--shadow);
+    }
+    h2{font-size: clamp(22px, 3.6vw, 32px); margin:0 0 14px}
+    h3{font-size:20px; margin:0 0 10px}
+    p{margin:0 0 10px}
+    ul{margin:10px 0 0 18px}
+    .muted{color:var(--muted)}
+    .tag{
+      display:inline-flex; align-items:center; gap:8px; padding:6px 10px;
+border-radius:999px; border:1px dashed var(--border); background:#fff;
+color:var(--muted); font-weight:600
+    }
+    .ok{color:var(--ok); font-weight:800}
+    .check{width:18px;height:18px;margin-right:6px;vertical-align:-3px}
+    .divider{height:1px;background:var(--border);margin:24px 0}
+    .list-badges{display:flex; flex-wrap:wrap; gap:10px}
+    /* Footer */
+    footer{background:#0b1320; color:#cfd6e6; padding:36px 0;
+margin-top:30px}
+    footer a{color:#cfd6e6; text-decoration:underline}
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-inner{grid-template-columns:1fr}
+      .grid-4{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width: 600px){
+      .menu{display:none}
+      .grid-2, .grid-3, .grid-4{grid-template-columns:1fr}
+      .hero-card{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class=3D"wrap nav">
+      <div class=3D"brand">
+        <div class=3D"logo">TT</div>
+        <div>
+          <div style=3D"font-size:15px">Tesla Transformers</div>
+          <div style=3D"font-size:12px; color:var(--muted)">India Ltd.</div=
+>
+        </div>
+      </div>
+      <nav class=3D"menu" aria-label=3D"Main">
+        <a href=3D"#about">About</a>
+        <a href=3D"#quality">Quality</a>
+        <a href=3D"#testing">Testing</a>
+        <a href=3D"#manufacturing">Manufacturing</a>
+        <a href=3D"#presence">Global Presence</a>
+        <a href=3D"#contact">Contact</a>
+      </nav>
+      <div class=3D"cta">
+        <a class=3D"btn btn-outline" href=3D"#contact">Enquire</a>
+        <a class=3D"btn btn-primary" href=3D"#download">Download Brochure</=
+a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class=3D"hero" id=3D"home" aria-label=3D"Hero">
+    <div class=3D"wrap hero-inner">
+      <div>
+        <span class=3D"badge" aria-label=3D"50+ years">Powering Reliability=
+ for
+52+ Years</span>
+        <h1>Transformers Built for Performance, Proven in the Field.</h1>
+        <p class=3D"lead">Tesla Transformers (India) Ltd. (TTIL) is a top
+Indian manufacturer of Power & Distribution Transformers and turnkey
+substations=E2=80=94delivering reliable, high-performance solutions to util=
+ities
+and industries worldwide since 1972.</p>
+        <div style=3D"display:flex; gap:10px; margin-top:16px">
+          <a class=3D"btn btn-primary" href=3D"#contact">Talk to Our Team</=
+a>
+          <a class=3D"btn" href=3D"#about">Explore Capabilities</a>
+        </div>
+        <div class=3D"hero-card" role=3D"group" aria-label=3D"Key performan=
+ce
+indicators">
+          <div class=3D"kpi"><div class=3D"muted">Annual Capacity</div><b>8=
+,000
+MVA</b></div>
+          <div class=3D"kpi"><div class=3D"muted">Voltage Class</div><b>Up =
+to
+220 kV</b></div>
+          <div class=3D"kpi"><div class=3D"muted">Product Rating</div><b>Up=
+ to
+200 MVA</b></div>
+          <div class=3D"kpi"><div class=3D"muted">VPD Plant</div><b>300
+kW</b></div>
+        </div>
+      </div>
+      <div class=3D"card" aria-label=3D"Quality and Accreditation">
+        <h3 style=3D"margin-top:6px">Quality You Can Measure</h3>
+        <p class=3D"muted">Certified systems and accredited testing for
+repeatable, traceable performance.</p>
+        <div class=3D"divider"></div>
+        <div class=3D"list-badges">
+          <span class=3D"tag">
+            <!-- check icon -->
+            <svg class=3D"check" viewBox=3D"0 0 24 24" fill=3D"none"
+stroke=3D"currentColor" stroke-width=3D"2"><path d=3D"M20 6L9 17l-5-5"/></s=
+vg>
+            ISO 9001
+          </span>
+          <span class=3D"tag"><svg class=3D"check" viewBox=3D"0 0 24 24"
+fill=3D"none" stroke=3D"currentColor" stroke-width=3D"2"><path d=3D"M20 6L9
+17l-5-5"/></svg> ISO 14001</span>
+          <span class=3D"tag"><svg class=3D"check" viewBox=3D"0 0 24 24"
+fill=3D"none" stroke=3D"currentColor" stroke-width=3D"2"><path d=3D"M20 6L9
+17l-5-5"/></svg> ISO 45001</span>
+          <span class=3D"tag"><svg class=3D"check" viewBox=3D"0 0 24 24"
+fill=3D"none" stroke=3D"currentColor" stroke-width=3D"2"><path d=3D"M20 6L9
+17l-5-5"/></svg> NABL (ISO/IEC 17025:2017)</span>
+        </div>
+        <p style=3D"margin-top:12px">Routine, type & special tests with ful=
+l
+traceability.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id=3D"about" aria-label=3D"About TTIL">
+    <div class=3D"wrap grid grid-2">
+      <div class=3D"card">
+        <h2>About Tesla Transformers (India) Ltd.</h2>
+        <p>Tesla Transformers (India) Ltd. (TTIL) has been powering
+progress since 1972=E2=80=94celebrating its golden jubilee in 2022=E2=80=94=
+and is
+consistently ranked among India=E2=80=99s leading transformer manufacturers=
+.</p>
+        <p>Guided by the visionary leadership of <strong>Mr. Jaideep Jain
+(CMD)</strong>, we are committed to engineering excellence, dependable
+performance, and on-time delivery for customers worldwide.</p>
+        <div class=3D"divider"></div>
+        <h3>What We Do</h3>
+        <ul>
+          <li><strong>Manufacturing & Supply</strong> of Power &
+Distribution Transformers</li>
+          <li><strong>Erection, Testing & Commissioning</strong></li>
+          <li><strong>Turnkey Substations (EPC)</strong></li>
+        </ul>
+      </div>
+      <div class=3D"grid">
+        <div class=3D"card">
+          <h3>Certifications & Standards</h3>
+          <p class=3D"muted">Management systems certified to:</p>
+          <ul>
+            <li>ISO 9001 (Quality Management)</li>
+            <li>ISO 14001 (Environmental Management)</li>
+            <li>ISO 45001 (Occupational Health & Safety)</li>
+          </ul>
+        </div>
+        <div class=3D"card">
+          <h3>Accredited Testing</h3>
+          <p>We operate a <strong>NABL-accredited</strong> transformer
+testing laboratory compliant with <strong>ISO/IEC 17025:2017</strong>,
+enabling routine, type, and special tests.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testing & Quality -->
+  <section id=3D"testing" aria-label=3D"Testing Facilities">
+    <div class=3D"wrap grid grid-3">
+      <div class=3D"card">
+        <h2>Type-Approved, Traceable, Trusted</h2>
+        <p>Every transformer is validated against Indian and international
+standards.</p>
+        <ul>
+          <li>Routine tests</li>
+          <li>Type tests</li>
+          <li>Special tests</li>
+        </ul>
+      </div>
+      <div class=3D"card">
+        <h3>Process Controls</h3>
+        <p class=3D"muted">Closed-loop quality controls ensure consistent
+performance and safety across product lines.</p>
+      </div>
+      <div class=3D"card">
+        <h3>Documentation</h3>
+        <p class=3D"muted">Full test reports and traceability records
+supplied for utility and regulatory compliance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Manufacturing & Technology -->
+  <section id=3D"manufacturing" aria-label=3D"Manufacturing & Technology">
+    <div class=3D"wrap grid grid-2">
+      <div class=3D"card">
+        <h2>Built for Performance at Scale</h2>
+        <ul>
+          <li>Transformer range <strong>up to 200 MVA, 220 kV</strong></li>
+          <li><strong>Annual capacity: 8,000 MVA</strong></li>
+          <li><strong>Vapour Phase Drying (VPD), 300 kW</strong> for
+uniform insulation drying and improved throughput</li>
+        </ul>
+      </div>
+      <div class=3D"card">
+        <h3>Applications & Segments</h3>
+        <p class=3D"muted">Public and private electrical utilities,
+industrial customers, and turnkey substation projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Presence -->
+  <section id=3D"presence" aria-label=3D"Global Presence">
+    <div class=3D"wrap card">
+      <h2>From Bhopal to the World</h2>
+      <p>Headquartered in <strong>Bhopal, Madhya Pradesh (India)</strong>,
+TTIL supports customers via a widespread sales & service network across:</p=
+>
+      <div class=3D"list-badges" style=3D"margin-top:10px">
+        <span class=3D"tag">India</span>
+        <span class=3D"tag">Asia</span>
+        <span class=3D"tag">Middle East</span>
+        <span class=3D"tag">Africa</span>
+        <span class=3D"tag">Australia</span>
+        <span class=3D"tag">The Americas</span>
+        <span class=3D"tag">Europe</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section id=3D"values" aria-label=3D"Values">
+    <div class=3D"wrap grid grid-3">
+      <div class=3D"card">
+        <h3>Relentless Integrity</h3>
+        <p class=3D"muted">We do what=E2=80=99s right=E2=80=94for the grid,=
+ for the customer,
+and for the long term.</p>
+      </div>
+      <div class=3D"card">
+        <h3>Uncompromising Standards</h3>
+        <p class=3D"muted">Certified systems and accredited testing underpi=
+n
+every build.</p>
+      </div>
+      <div class=3D"card">
+        <h3>Unyielding Commitment</h3>
+        <p class=3D"muted">Project after project, we deliver dependable
+power.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section id=3D"leadership" aria-label=3D"Leadership">
+    <div class=3D"wrap grid grid-2">
+      <div class=3D"card">
+        <h2>Leadership</h2>
+        <p>Under the guidance of <strong>Mr. Jaideep Jain (CMD)</strong>,
+TTIL continues to invest in people, processes, and technology=E2=80=94deliv=
+ering
+dependable power solutions at global scale.</p>
+      </div>
+      <div class=3D"card">
+        <h3>Milestones</h3>
+        <ul>
+          <li><strong>1972</strong> =E2=80=94 Year of establishment</li>
+          <li><strong>2022</strong> =E2=80=94 Golden Jubilee (50 years)</li=
+>
+          <li><strong>52+ years</strong> =E2=80=94 Industry credibility</li=
+>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / CTA -->
+  <section id=3D"contact" aria-label=3D"Contact">
+    <div class=3D"wrap grid grid-2">
+      <div class=3D"card">
+        <h2>Ready to power your next project?</h2>
+        <p>Talk to our team about transformers and turnkey substations.</p>
+        <div style=3D"display:flex; gap:10px; margin-top:12px">
+          <a class=3D"btn btn-primary" href=3D"#">Contact Us</a>
+          <a class=3D"btn" id=3D"download" href=3D"#">Download Brochure</a>
+        </div>
+      </div>
+      <div class=3D"card">
+        <h3>Fast Facts</h3>
+        <ul>
+          <li><strong>ISO 9001 | 14001 | 45001</strong></li>
+          <li><strong>NABL</strong> (ISO/IEC 17025:2017) test lab</li>
+          <li><strong>Up to 200 MVA, 220 kV</strong></li>
+          <li><strong>8,000 MVA</strong> annual manufacturing capacity</li>
+          <li><strong>VPD plant 300 kW</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer role=3D"contentinfo">
+    <div class=3D"wrap">
+      <div style=3D"display:flex; align-items:center; gap:12px;
+margin-bottom:8px">
+        <div class=3D"logo" aria-hidden=3D"true">TT</div>
+        <strong>Tesla Transformers (India) Ltd.</strong>
+      </div>
+      <div class=3D"muted">=C2=A9 2025 TTIL. All rights reserved. | Bhopal,=
+ Madhya
+Pradesh (India)</div>
+    </div>
+  </footer>
+</body>
+</html>
+
+--00000000000012dca4063ee56484
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">&lt;!doctype html&gt;<br>&lt;html lang=3D&quot;en&quot;&gt=
+;<br>&lt;head&gt;<br>=C2=A0 &lt;meta charset=3D&quot;utf-8&quot; /&gt;<br>=
+=C2=A0 &lt;meta name=3D&quot;viewport&quot; content=3D&quot;width=3Ddevice-=
+width,initial-scale=3D1&quot; /&gt;<br>=C2=A0 &lt;title&gt;Tesla Transforme=
+rs (India) Ltd. =E2=80=94 Company Overview&lt;/title&gt;<br>=C2=A0 &lt;meta=
+ name=3D&quot;description&quot; content=3D&quot;Since 1972, TTIL has delive=
+red reliable power &amp; distribution transformers and turnkey substations.=
+ ISO 9001/14001/45001 certified, NABL-accredited testing, 8,000 MVA annual =
+capacity, global reach.&quot;&gt;<br>=C2=A0 &lt;style&gt;<br>=C2=A0 =C2=A0 =
+:root{<br>=C2=A0 =C2=A0 =C2=A0 --bg:#f7f9fc;<br>=C2=A0 =C2=A0 =C2=A0 --card=
+:#ffffff;<br>=C2=A0 =C2=A0 =C2=A0 --text:#0e1222;<br>=C2=A0 =C2=A0 =C2=A0 -=
+-muted:#56607a;<br>=C2=A0 =C2=A0 =C2=A0 --primary:#0a5bd3;<br>=C2=A0 =C2=A0=
+ =C2=A0 --primary-ink:#083e91;<br>=C2=A0 =C2=A0 =C2=A0 --accent:#00bfa6;<br=
+>=C2=A0 =C2=A0 =C2=A0 --border:#e4e8f0;<br>=C2=A0 =C2=A0 =C2=A0 --ok:#18b26=
+b;<br>=C2=A0 =C2=A0 =C2=A0 --shadow:0 6px 20px rgba(10,91,211,.08);<br>=C2=
+=A0 =C2=A0 =C2=A0 --radius:16px;<br>=C2=A0 =C2=A0 =C2=A0 --radius-lg:22px;<=
+br>=C2=A0 =C2=A0 =C2=A0 --wrap:1120px;<br>=C2=A0 =C2=A0 }<br>=C2=A0 =C2=A0 =
+*{box-sizing:border-box}<br>=C2=A0 =C2=A0 html,body{height:100%}<br>=C2=A0 =
+=C2=A0 body{<br>=C2=A0 =C2=A0 =C2=A0 margin:0; font-family:Inter,system-ui,=
+-apple-system,Segoe UI,Roboto,Ubuntu,&quot;Helvetica Neue&quot;,Arial,sans-=
+serif;<br>=C2=A0 =C2=A0 =C2=A0 color:var(--text); background:var(--bg); lin=
+e-height:1.55;<br>=C2=A0 =C2=A0 }<br>=C2=A0 =C2=A0 a{color:var(--primary); =
+text-decoration:none}<br>=C2=A0 =C2=A0 .wrap{max-width:var(--wrap); margin:=
+auto; padding:0 20px}<br>=C2=A0 =C2=A0 header{<br>=C2=A0 =C2=A0 =C2=A0 posi=
+tion:sticky; top:0; z-index:50; background:rgba(255,255,255,.9); backdrop-f=
+ilter:saturate(180%) blur(10px);<br>=C2=A0 =C2=A0 =C2=A0 border-bottom:1px =
+solid var(--border);<br>=C2=A0 =C2=A0 }<br>=C2=A0 =C2=A0 .nav{display:flex;=
+ align-items:center; justify-content:space-between; gap:16px; padding:14px =
+0}<br>=C2=A0 =C2=A0 .brand{display:flex; align-items:center; gap:10px; font=
+-weight:800; letter-spacing:.2px}<br>=C2=A0 =C2=A0 .logo{<br>=C2=A0 =C2=A0 =
+=C2=A0 width:34px;height:34px;border-radius:10px; display:inline-grid; plac=
+e-items:center; color:#fff;<br>=C2=A0 =C2=A0 =C2=A0 background:linear-gradi=
+ent(135deg, var(--primary), var(--accent));<br>=C2=A0 =C2=A0 =C2=A0 box-sha=
+dow:0 6px 16px rgba(10,91,211,.25);<br>=C2=A0 =C2=A0 =C2=A0 font-weight:800=
+;<br>=C2=A0 =C2=A0 }<br>=C2=A0 =C2=A0 .menu{display:flex; gap:18px; flex-wr=
+ap:wrap}<br>=C2=A0 =C2=A0 .menu a{color:var(--muted); font-weight:600}<br>=
+=C2=A0 =C2=A0 .cta{display:flex; gap:10px}<br>=C2=A0 =C2=A0 .btn{<br>=C2=A0=
+ =C2=A0 =C2=A0 display:inline-flex; align-items:center; gap:10px; padding:1=
+0px 16px; border-radius:12px; font-weight:700; border:1px solid var(--borde=
+r); background:#fff;<br>=C2=A0 =C2=A0 =C2=A0 box-shadow:var(--shadow);<br>=
+=C2=A0 =C2=A0 }<br>=C2=A0 =C2=A0 .btn-primary{background:var(--primary); co=
+lor:#fff; border-color:transparent}<br>=C2=A0 =C2=A0 .btn-outline{backgroun=
+d:#fff; color:var(--primary-ink)}<br>=C2=A0 =C2=A0 /* Hero */<br>=C2=A0 =C2=
+=A0 .hero{<br>=C2=A0 =C2=A0 =C2=A0 position:relative; overflow:hidden; bord=
+er-bottom:1px solid var(--border);<br>=C2=A0 =C2=A0 =C2=A0 background:<br>=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 radial-gradient(1400px 600px at 70% -10%, rgba(=
+10,91,211,.18), transparent 60%),<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 radial-gra=
+dient(900px 500px at -10% 10%, rgba(0,191,166,.18), transparent 60%),<br>=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 linear-gradient(180deg,#fff, #f9fbff);<br>=C2=
+=A0 =C2=A0 }<br>=C2=A0 =C2=A0 .hero-inner{display:grid; grid-template-colum=
+ns:1.1fr .9fr; gap:28px; padding:60px 0}<br>=C2=A0 =C2=A0 h1{font-size: cla=
+mp(28px, 4.8vw, 46px); line-height:1.08; margin:0 0 14px}<br>=C2=A0 =C2=A0 =
+.lead{font-size: clamp(15px, 2.2vw, 18px); color:var(--muted); max-width:60=
+ch}<br>=C2=A0 =C2=A0 .hero-card{<br>=C2=A0 =C2=A0 =C2=A0 background:var(--c=
+ard); border:1px solid var(--border); border-radius:var(--radius-lg); paddi=
+ng:18px; box-shadow:var(--shadow);<br>=C2=A0 =C2=A0 =C2=A0 display:grid; gr=
+id-template-columns:1fr 1fr; gap:14px; margin-top:22px;<br>=C2=A0 =C2=A0 }<=
+br>=C2=A0 =C2=A0 .kpi{background:#fff; border:1px solid var(--border); bord=
+er-radius:14px; padding:14px}<br>=C2=A0 =C2=A0 .kpi b{font-size:22px}<br>=
+=C2=A0 =C2=A0 .badge{<br>=C2=A0 =C2=A0 =C2=A0 display:inline-flex; align-it=
+ems:center; gap:8px; font-weight:700; color:#0a5d43; background:#e9f9f2; bo=
+rder:1px solid #c8f0e0; padding:6px 10px; border-radius:999px;<br>=C2=A0 =
+=C2=A0 }<br>=C2=A0 =C2=A0 /* Sections */<br>=C2=A0 =C2=A0 section{padding:5=
+6px 0}<br>=C2=A0 =C2=A0 .grid{display:grid; gap:18px}<br>=C2=A0 =C2=A0 .gri=
+d-2{grid-template-columns:repeat(2,1fr)}<br>=C2=A0 =C2=A0 .grid-3{grid-temp=
+late-columns:repeat(3,1fr)}<br>=C2=A0 =C2=A0 .grid-4{grid-template-columns:=
+repeat(4,1fr)}<br>=C2=A0 =C2=A0 .card{<br>=C2=A0 =C2=A0 =C2=A0 background:v=
+ar(--card); border:1px solid var(--border); border-radius:var(--radius); pa=
+dding:20px; box-shadow:var(--shadow);<br>=C2=A0 =C2=A0 }<br>=C2=A0 =C2=A0 h=
+2{font-size: clamp(22px, 3.6vw, 32px); margin:0 0 14px}<br>=C2=A0 =C2=A0 h3=
+{font-size:20px; margin:0 0 10px}<br>=C2=A0 =C2=A0 p{margin:0 0 10px}<br>=
+=C2=A0 =C2=A0 ul{margin:10px 0 0 18px}<br>=C2=A0 =C2=A0 .muted{color:var(--=
+muted)}<br>=C2=A0 =C2=A0 .tag{<br>=C2=A0 =C2=A0 =C2=A0 display:inline-flex;=
+ align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border=
+:1px dashed var(--border); background:#fff; color:var(--muted); font-weight=
+:600<br>=C2=A0 =C2=A0 }<br>=C2=A0 =C2=A0 .ok{color:var(--ok); font-weight:8=
+00}<br>=C2=A0 =C2=A0 .check{width:18px;height:18px;margin-right:6px;vertica=
+l-align:-3px}<br>=C2=A0 =C2=A0 .divider{height:1px;background:var(--border)=
+;margin:24px 0}<br>=C2=A0 =C2=A0 .list-badges{display:flex; flex-wrap:wrap;=
+ gap:10px}<br>=C2=A0 =C2=A0 /* Footer */<br>=C2=A0 =C2=A0 footer{background=
+:#0b1320; color:#cfd6e6; padding:36px 0; margin-top:30px}<br>=C2=A0 =C2=A0 =
+footer a{color:#cfd6e6; text-decoration:underline}<br>=C2=A0 =C2=A0 /* Resp=
+onsive */<br>=C2=A0 =C2=A0 @media (max-width: 900px){<br>=C2=A0 =C2=A0 =C2=
+=A0 .hero-inner{grid-template-columns:1fr}<br>=C2=A0 =C2=A0 =C2=A0 .grid-4{=
+grid-template-columns:repeat(2,1fr)}<br>=C2=A0 =C2=A0 =C2=A0 .grid-3{grid-t=
+emplate-columns:repeat(2,1fr)}<br>=C2=A0 =C2=A0 }<br>=C2=A0 =C2=A0 @media (=
+max-width: 600px){<br>=C2=A0 =C2=A0 =C2=A0 .menu{display:none}<br>=C2=A0 =
+=C2=A0 =C2=A0 .grid-2, .grid-3, .grid-4{grid-template-columns:1fr}<br>=C2=
+=A0 =C2=A0 =C2=A0 .hero-card{grid-template-columns:1fr}<br>=C2=A0 =C2=A0 }<=
+br>=C2=A0 &lt;/style&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>=C2=A0 &lt;!--=
+ Header --&gt;<br>=C2=A0 &lt;header&gt;<br>=C2=A0 =C2=A0 &lt;div class=3D&q=
+uot;wrap nav&quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;div class=3D&quot;brand&=
+quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;div class=3D&quot;logo&quot;&g=
+t;TT&lt;/div&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;div&gt;<br>=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 &lt;div style=3D&quot;font-size:15px&quot;&gt;Tesl=
+a Transformers&lt;/div&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;div st=
+yle=3D&quot;font-size:12px; color:var(--muted)&quot;&gt;India Ltd.&lt;/div&=
+gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt=
+;/div&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;nav class=3D&quot;menu&quot; aria-lab=
+el=3D&quot;Main&quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;a href=3D&quot=
+;#about&quot;&gt;About&lt;/a&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;a href=
+=3D&quot;#quality&quot;&gt;Quality&lt;/a&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ &lt;a href=3D&quot;#testing&quot;&gt;Testing&lt;/a&gt;<br>=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 &lt;a href=3D&quot;#manufacturing&quot;&gt;Manufacturing&lt;/=
+a&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;a href=3D&quot;#presence&quot;&gt;=
+Global Presence&lt;/a&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;a href=3D&quot=
+;#contact&quot;&gt;Contact&lt;/a&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;/nav&gt;<b=
+r>=C2=A0 =C2=A0 =C2=A0 &lt;div class=3D&quot;cta&quot;&gt;<br>=C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 &lt;a class=3D&quot;btn btn-outline&quot; href=3D&quot;#cont=
+act&quot;&gt;Enquire&lt;/a&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;a class=
+=3D&quot;btn btn-primary&quot; href=3D&quot;#download&quot;&gt;Download Bro=
+chure&lt;/a&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 =C2=A0 &lt;/=
+div&gt;<br>=C2=A0 &lt;/header&gt;<br><br>=C2=A0 &lt;!-- Hero --&gt;<br>=C2=
+=A0 &lt;section class=3D&quot;hero&quot; id=3D&quot;home&quot; aria-label=
+=3D&quot;Hero&quot;&gt;<br>=C2=A0 =C2=A0 &lt;div class=3D&quot;wrap hero-in=
+ner&quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;div&gt;<br>=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 &lt;span class=3D&quot;badge&quot; aria-label=3D&quot;50+ years&quot=
+;&gt;Powering Reliability for 52+ Years&lt;/span&gt;<br>=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 &lt;h1&gt;Transformers Built for Performance, Proven in the Fiel=
+d.&lt;/h1&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;p class=3D&quot;lead&quot;=
+&gt;Tesla Transformers (India) Ltd. (TTIL) is a top Indian manufacturer of =
+Power &amp; Distribution Transformers and turnkey substations=E2=80=94deliv=
+ering reliable, high-performance solutions to utilities and industries worl=
+dwide since 1972.&lt;/p&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;div style=3D=
+&quot;display:flex; gap:10px; margin-top:16px&quot;&gt;<br>=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 &lt;a class=3D&quot;btn btn-primary&quot; href=3D&quot=
+;#contact&quot;&gt;Talk to Our Team&lt;/a&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 &lt;a class=3D&quot;btn&quot; href=3D&quot;#about&quot;&gt;Explo=
+re Capabilities&lt;/a&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;/div&gt;<br>=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;div class=3D&quot;hero-card&quot; role=3D&q=
+uot;group&quot; aria-label=3D&quot;Key performance indicators&quot;&gt;<br>=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;div class=3D&quot;kpi&quot;&gt;&lt;d=
+iv class=3D&quot;muted&quot;&gt;Annual Capacity&lt;/div&gt;&lt;b&gt;8,000 M=
+VA&lt;/b&gt;&lt;/div&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;div clas=
+s=3D&quot;kpi&quot;&gt;&lt;div class=3D&quot;muted&quot;&gt;Voltage Class&l=
+t;/div&gt;&lt;b&gt;Up to 220 kV&lt;/b&gt;&lt;/div&gt;<br>=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 &lt;div class=3D&quot;kpi&quot;&gt;&lt;div class=3D&quot;=
+muted&quot;&gt;Product Rating&lt;/div&gt;&lt;b&gt;Up to 200 MVA&lt;/b&gt;&l=
+t;/div&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;div class=3D&quot;kpi&=
+quot;&gt;&lt;div class=3D&quot;muted&quot;&gt;VPD Plant&lt;/div&gt;&lt;b&gt=
+;300 kW&lt;/b&gt;&lt;/div&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;/div&gt;<b=
+r>=C2=A0 =C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;div class=
+=3D&quot;card&quot; aria-label=3D&quot;Quality and Accreditation&quot;&gt;<=
+br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;h3 style=3D&quot;margin-top:6px&quot;&gt=
+;Quality You Can Measure&lt;/h3&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;p cl=
+ass=3D&quot;muted&quot;&gt;Certified systems and accredited testing for rep=
+eatable, traceable performance.&lt;/p&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &l=
+t;div class=3D&quot;divider&quot;&gt;&lt;/div&gt;<br>=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 &lt;div class=3D&quot;list-badges&quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 &lt;span class=3D&quot;tag&quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 &lt;!-- check icon --&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 &lt;svg class=3D&quot;check&quot; viewBox=3D&quot;0 0 24 =
+24&quot; fill=3D&quot;none&quot; stroke=3D&quot;currentColor&quot; stroke-w=
+idth=3D&quot;2&quot;&gt;&lt;path d=3D&quot;M20 6L9 17l-5-5&quot;/&gt;&lt;/s=
+vg&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 ISO 9001<br>=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 &lt;/span&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 &lt;span class=3D&quot;tag&quot;&gt;&lt;svg class=3D&quot;check&quot; v=
+iewBox=3D&quot;0 0 24 24&quot; fill=3D&quot;none&quot; stroke=3D&quot;curre=
+ntColor&quot; stroke-width=3D&quot;2&quot;&gt;&lt;path d=3D&quot;M20 6L9 17=
+l-5-5&quot;/&gt;&lt;/svg&gt; ISO 14001&lt;/span&gt;<br>=C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 &lt;span class=3D&quot;tag&quot;&gt;&lt;svg class=3D&quot;ch=
+eck&quot; viewBox=3D&quot;0 0 24 24&quot; fill=3D&quot;none&quot; stroke=3D=
+&quot;currentColor&quot; stroke-width=3D&quot;2&quot;&gt;&lt;path d=3D&quot=
+;M20 6L9 17l-5-5&quot;/&gt;&lt;/svg&gt; ISO 45001&lt;/span&gt;<br>=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;span class=3D&quot;tag&quot;&gt;&lt;svg cla=
+ss=3D&quot;check&quot; viewBox=3D&quot;0 0 24 24&quot; fill=3D&quot;none&qu=
+ot; stroke=3D&quot;currentColor&quot; stroke-width=3D&quot;2&quot;&gt;&lt;p=
+ath d=3D&quot;M20 6L9 17l-5-5&quot;/&gt;&lt;/svg&gt; NABL (ISO/IEC 17025:20=
+17)&lt;/span&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 &lt;p style=3D&quot;margin-top:12px&quot;&gt;Routine, typ=
+e &amp; special tests with full traceability.&lt;/p&gt;<br>=C2=A0 =C2=A0 =
+=C2=A0 &lt;/div&gt;<br>=C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 &lt;/section&gt=
+;<br><br>=C2=A0 &lt;!-- About --&gt;<br>=C2=A0 &lt;section id=3D&quot;about=
+&quot; aria-label=3D&quot;About TTIL&quot;&gt;<br>=C2=A0 =C2=A0 &lt;div cla=
+ss=3D&quot;wrap grid grid-2&quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;div class=
+=3D&quot;card&quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;h2&gt;About Tesl=
+a Transformers (India) Ltd.&lt;/h2&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;p=
+&gt;Tesla Transformers (India) Ltd. (TTIL) has been powering progress since=
+ 1972=E2=80=94celebrating its golden jubilee in 2022=E2=80=94and is consist=
+ently ranked among India=E2=80=99s leading transformer manufacturers.&lt;/p=
+&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;p&gt;Guided by the visionary leader=
+ship of &lt;strong&gt;Mr. Jaideep Jain (CMD)&lt;/strong&gt;, we are committ=
+ed to engineering excellence, dependable performance, and on-time delivery =
+for customers worldwide.&lt;/p&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;div c=
+lass=3D&quot;divider&quot;&gt;&lt;/div&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &=
+lt;h3&gt;What We Do&lt;/h3&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;ul&gt;<br=
+>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;li&gt;&lt;strong&gt;Manufacturing &=
+amp; Supply&lt;/strong&gt; of Power &amp; Distribution Transformers&lt;/li&=
+gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;li&gt;&lt;strong&gt;Erection,=
+ Testing &amp; Commissioning&lt;/strong&gt;&lt;/li&gt;<br>=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 &lt;li&gt;&lt;strong&gt;Turnkey Substations (EPC)&lt;/str=
+ong&gt;&lt;/li&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;/ul&gt;<br>=C2=A0 =C2=
+=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;div class=3D&quot;grid&=
+quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;div class=3D&quot;card&quot;&g=
+t;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;h3&gt;Certifications &amp; Sta=
+ndards&lt;/h3&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;p class=3D&quot=
+;muted&quot;&gt;Management systems certified to:&lt;/p&gt;<br>=C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 &lt;ul&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 &lt;li&gt;ISO 9001 (Quality Management)&lt;/li&gt;<br>=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 &lt;li&gt;ISO 14001 (Environmental Management)&lt;=
+/li&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;li&gt;ISO 45001 (O=
+ccupational Health &amp; Safety)&lt;/li&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 &lt;/ul&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 &lt;div class=3D&quot;card&quot;&gt;<br>=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 &lt;h3&gt;Accredited Testing&lt;/h3&gt;<br>=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 &lt;p&gt;We operate a &lt;strong&gt;NABL-accredite=
+d&lt;/strong&gt; transformer testing laboratory compliant with &lt;strong&g=
+t;ISO/IEC 17025:2017&lt;/strong&gt;, enabling routine, type, and special te=
+sts.&lt;/p&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 =C2=A0=
+ =C2=A0 &lt;/div&gt;<br>=C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 &lt;/section&g=
+t;<br><br>=C2=A0 &lt;!-- Testing &amp; Quality --&gt;<br>=C2=A0 &lt;section=
+ id=3D&quot;testing&quot; aria-label=3D&quot;Testing Facilities&quot;&gt;<b=
+r>=C2=A0 =C2=A0 &lt;div class=3D&quot;wrap grid grid-3&quot;&gt;<br>=C2=A0 =
+=C2=A0 =C2=A0 &lt;div class=3D&quot;card&quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 &lt;h2&gt;Type-Approved, Traceable, Trusted&lt;/h2&gt;<br>=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 &lt;p&gt;Every transformer is validated against Indian an=
+d international standards.&lt;/p&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;ul&=
+gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;li&gt;Routine tests&lt;/li&gt=
+;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;li&gt;Type tests&lt;/li&gt;<br>=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;li&gt;Special tests&lt;/li&gt;<br>=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;/ul&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;/div&gt=
+;<br>=C2=A0 =C2=A0 =C2=A0 &lt;div class=3D&quot;card&quot;&gt;<br>=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 &lt;h3&gt;Process Controls&lt;/h3&gt;<br>=C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 &lt;p class=3D&quot;muted&quot;&gt;Closed-loop quality contr=
+ols ensure consistent performance and safety across product lines.&lt;/p&gt=
+;<br>=C2=A0 =C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;div clas=
+s=3D&quot;card&quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;h3&gt;Documenta=
+tion&lt;/h3&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;p class=3D&quot;muted&qu=
+ot;&gt;Full test reports and traceability records supplied for utility and =
+regulatory compliance.&lt;/p&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;/div&gt;<br>=
+=C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 &lt;/section&gt;<br><br>=C2=A0 &lt;!--=
+ Manufacturing &amp; Technology --&gt;<br>=C2=A0 &lt;section id=3D&quot;man=
+ufacturing&quot; aria-label=3D&quot;Manufacturing &amp; Technology&quot;&gt=
+;<br>=C2=A0 =C2=A0 &lt;div class=3D&quot;wrap grid grid-2&quot;&gt;<br>=C2=
+=A0 =C2=A0 =C2=A0 &lt;div class=3D&quot;card&quot;&gt;<br>=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 &lt;h2&gt;Built for Performance at Scale&lt;/h2&gt;<br>=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 &lt;ul&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;l=
+i&gt;Transformer range &lt;strong&gt;up to 200 MVA, 220 kV&lt;/strong&gt;&l=
+t;/li&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;li&gt;&lt;strong&gt;Ann=
+ual capacity: 8,000 MVA&lt;/strong&gt;&lt;/li&gt;<br>=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 &lt;li&gt;&lt;strong&gt;Vapour Phase Drying (VPD), 300 kW&lt;=
+/strong&gt; for uniform insulation drying and improved throughput&lt;/li&gt=
+;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;/ul&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;/d=
+iv&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;div class=3D&quot;card&quot;&gt;<br>=C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 &lt;h3&gt;Applications &amp; Segments&lt;/h3&gt;<b=
+r>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;p class=3D&quot;muted&quot;&gt;Public and=
+ private electrical utilities, industrial customers, and turnkey substation=
+ projects.&lt;/p&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 =C2=A0 =
+&lt;/div&gt;<br>=C2=A0 &lt;/section&gt;<br><br>=C2=A0 &lt;!-- Global Presen=
+ce --&gt;<br>=C2=A0 &lt;section id=3D&quot;presence&quot; aria-label=3D&quo=
+t;Global Presence&quot;&gt;<br>=C2=A0 =C2=A0 &lt;div class=3D&quot;wrap car=
+d&quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;h2&gt;From Bhopal to the World&lt;/=
+h2&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;p&gt;Headquartered in &lt;strong&gt;Bhop=
+al, Madhya Pradesh (India)&lt;/strong&gt;, TTIL supports customers via a wi=
+despread sales &amp; service network across:&lt;/p&gt;<br>=C2=A0 =C2=A0 =C2=
+=A0 &lt;div class=3D&quot;list-badges&quot; style=3D&quot;margin-top:10px&q=
+uot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;span class=3D&quot;tag&quot;&gt=
+;India&lt;/span&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;span class=3D&quot;t=
+ag&quot;&gt;Asia&lt;/span&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;span class=
+=3D&quot;tag&quot;&gt;Middle East&lt;/span&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 &lt;span class=3D&quot;tag&quot;&gt;Africa&lt;/span&gt;<br>=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 &lt;span class=3D&quot;tag&quot;&gt;Australia&lt;/span&gt=
+;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;span class=3D&quot;tag&quot;&gt;The Am=
+ericas&lt;/span&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;span class=3D&quot;t=
+ag&quot;&gt;Europe&lt;/span&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=
+=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 &lt;/section&gt;<br><br>=C2=A0 &lt;!-- Va=
+lues --&gt;<br>=C2=A0 &lt;section id=3D&quot;values&quot; aria-label=3D&quo=
+t;Values&quot;&gt;<br>=C2=A0 =C2=A0 &lt;div class=3D&quot;wrap grid grid-3&=
+quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;div class=3D&quot;card&quot;&gt;<br>=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;h3&gt;Relentless Integrity&lt;/h3&gt;<br>=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;p class=3D&quot;muted&quot;&gt;We do what=
+=E2=80=99s right=E2=80=94for the grid, for the customer, and for the long t=
+erm.&lt;/p&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 =C2=A0 =C2=A0=
+ &lt;div class=3D&quot;card&quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;h3=
+&gt;Uncompromising Standards&lt;/h3&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;=
+p class=3D&quot;muted&quot;&gt;Certified systems and accredited testing und=
+erpin every build.&lt;/p&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0=
+ =C2=A0 =C2=A0 &lt;div class=3D&quot;card&quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 &lt;h3&gt;Unyielding Commitment&lt;/h3&gt;<br>=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 &lt;p class=3D&quot;muted&quot;&gt;Project after project, we deliver=
+ dependable power.&lt;/p&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0=
+ =C2=A0 &lt;/div&gt;<br>=C2=A0 &lt;/section&gt;<br><br>=C2=A0 &lt;!-- Leade=
+rship --&gt;<br>=C2=A0 &lt;section id=3D&quot;leadership&quot; aria-label=
+=3D&quot;Leadership&quot;&gt;<br>=C2=A0 =C2=A0 &lt;div class=3D&quot;wrap g=
+rid grid-2&quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;div class=3D&quot;card&quo=
+t;&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;h2&gt;Leadership&lt;/h2&gt;<br>=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;p&gt;Under the guidance of &lt;strong&gt;Mr=
+. Jaideep Jain (CMD)&lt;/strong&gt;, TTIL continues to invest in people, pr=
+ocesses, and technology=E2=80=94delivering dependable power solutions at gl=
+obal scale.&lt;/p&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 =C2=A0=
+ =C2=A0 &lt;div class=3D&quot;card&quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ &lt;h3&gt;Milestones&lt;/h3&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;ul&gt;<=
+br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;li&gt;&lt;strong&gt;1972&lt;/stro=
+ng&gt; =E2=80=94 Year of establishment&lt;/li&gt;<br>=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 &lt;li&gt;&lt;strong&gt;2022&lt;/strong&gt; =E2=80=94 Golden =
+Jubilee (50 years)&lt;/li&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;li&=
+gt;&lt;strong&gt;52+ years&lt;/strong&gt; =E2=80=94 Industry credibility&lt=
+;/li&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;/ul&gt;<br>=C2=A0 =C2=A0 =C2=A0=
+ &lt;/div&gt;<br>=C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 &lt;/section&gt;<br><=
+br>=C2=A0 &lt;!-- Contact / CTA --&gt;<br>=C2=A0 &lt;section id=3D&quot;con=
+tact&quot; aria-label=3D&quot;Contact&quot;&gt;<br>=C2=A0 =C2=A0 &lt;div cl=
+ass=3D&quot;wrap grid grid-2&quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;div clas=
+s=3D&quot;card&quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;h2&gt;Ready to =
+power your next project?&lt;/h2&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;p&gt=
+;Talk to our team about transformers and turnkey substations.&lt;/p&gt;<br>=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;div style=3D&quot;display:flex; gap:10px; m=
+argin-top:12px&quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;a class=
+=3D&quot;btn btn-primary&quot; href=3D&quot;#&quot;&gt;Contact Us&lt;/a&gt;=
+<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;a class=3D&quot;btn&quot; id=3D&=
+quot;download&quot; href=3D&quot;#&quot;&gt;Download Brochure&lt;/a&gt;<br>=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;/div&g=
+t;<br>=C2=A0 =C2=A0 =C2=A0 &lt;div class=3D&quot;card&quot;&gt;<br>=C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 &lt;h3&gt;Fast Facts&lt;/h3&gt;<br>=C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 &lt;ul&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;li&gt;&lt;s=
+trong&gt;ISO 9001 | 14001 | 45001&lt;/strong&gt;&lt;/li&gt;<br>=C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 &lt;li&gt;&lt;strong&gt;NABL&lt;/strong&gt; (ISO/I=
+EC 17025:2017) test lab&lt;/li&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &l=
+t;li&gt;&lt;strong&gt;Up to 200 MVA, 220 kV&lt;/strong&gt;&lt;/li&gt;<br>=
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;li&gt;&lt;strong&gt;8,000 MVA&lt;/st=
+rong&gt; annual manufacturing capacity&lt;/li&gt;<br>=C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 &lt;li&gt;&lt;strong&gt;VPD plant 300 kW&lt;/strong&gt;&lt;/l=
+i&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;/ul&gt;<br>=C2=A0 =C2=A0 =C2=A0 &l=
+t;/div&gt;<br>=C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 &lt;/section&gt;<br><br>=
+=C2=A0 &lt;footer role=3D&quot;contentinfo&quot;&gt;<br>=C2=A0 =C2=A0 &lt;d=
+iv class=3D&quot;wrap&quot;&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;div style=3D&qu=
+ot;display:flex; align-items:center; gap:12px; margin-bottom:8px&quot;&gt;<=
+br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;div class=3D&quot;logo&quot; aria-hidden=
+=3D&quot;true&quot;&gt;TT&lt;/div&gt;<br>=C2=A0 =C2=A0 =C2=A0 =C2=A0 &lt;st=
+rong&gt;Tesla Transformers (India) Ltd.&lt;/strong&gt;<br>=C2=A0 =C2=A0 =C2=
+=A0 &lt;/div&gt;<br>=C2=A0 =C2=A0 =C2=A0 &lt;div class=3D&quot;muted&quot;&=
+gt;=C2=A9 2025 TTIL. All rights reserved. | Bhopal, Madhya Pradesh (India)&=
+lt;/div&gt;<br>=C2=A0 =C2=A0 &lt;/div&gt;<br>=C2=A0 &lt;/footer&gt;<br>&lt;=
+/body&gt;<br>&lt;/html&gt;<br></div>
+
+--00000000000012dca4063ee56484--
