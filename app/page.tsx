@@ -289,107 +289,140 @@ Explore Our Legacy.
         </div>
       </section>
 
-      <section className="py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+<section className="py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
 
-<div className="absolute inset-0 overflow-hidden pointer-events-none">
-  <div
-    className="zoom-bg-image"
-    style={{
-      backgroundImage: `url('/landscape.jpg')`,
-    }}
-  ></div>
-</div>
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div
+      className="zoom-bg-image"
+      style={{ backgroundImage: `url('/landscape.jpg')` }}
+    ></div>
+  </div>
 
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, #3b82f6 0%, transparent 50%),
-                              radial-gradient(circle at 75% 75%, #3b82f6 0%, transparent 50%),
-                              radial-gradient(circle at 50% 50%, #10b981 0%, transparent 30%)`
-          }}></div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <ScrollReveal animation="fade-up">
+      <div className="text-center mb-10 md:mb-14">
+        <div className="inline-flex items-center px-6 py-3 rounded-full bg-blue-100 text-blue-800 font-semibold mb-6 shadow-md">
+          <Award className="w-5 h-5 mr-2" />
+          Excellence & Innovation
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <ScrollReveal animation="fade-up">
-            <div className="text-center mb-8 md:mb-12">
-            <div className="inline-flex items-center px-4 sm:px-6 py-3 rounded-full bg-blue-100 text-blue-800 font-semibold mb-6 shadow-md">
-              <Award className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-              Excellence & Innovation
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+          POWERING EXCELLENCE,
+          <span className="block text-blue-600">GLOBALLY TRUSTED</span>
+        </h2>
+
+        <div className="w-32 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full"></div>
+      </div>
+    </ScrollReveal>
+
+    {/* ✅ FIXED GRID */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
+
+      {/* CARD 1 */}
+      <ScrollReveal animation="scale" delay={100}>
+        <Card className="h-full flex flex-col border-0 shadow-xl bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden">
+          <CardContent className="p-8 flex flex-col h-full text-center">
+
+            <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <Award className="h-10 w-10 text-white" />
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight px-4">
-              POWERING EXCELLENCE,
-              <span className="block text-blue-600">GLOBALLY TRUSTED</span>
-            </h2>
-            <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full"></div>
-          </div>
-          </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <ScrollReveal animation="scale" delay={100}>
-            <Card className="text-center p-6 md:p-8 border-0 shadow-xl bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <CardContent className="p-0 relative z-10">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                  <Award className="h-8 w-8 md:h-10 md:w-10 text-white" />
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">50+ Years</h3>
-                <p className="text-base md:text-lg font-semibold text-blue-600 mb-2">of Expertise</p>
-                <p className="text-sm md:text-base text-gray-600 leading-relaxed pb-5">
-                  Since 1972, Tesla Transformers has been shaping India’s power sector with innovation, trust, and proven reliability. </p>
+            <h3 className="text-3xl font-bold text-gray-900 mb-2">
+              50+ Years
+            </h3>
 
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-transform hover:scale-105 ">
-                  <Link href="/about" target="_blank">
-                    Read More
-                  </Link>
+            <p className="text-lg font-semibold text-blue-600 mb-4">
+              of Expertise
+            </p>
+
+            <p className="text-gray-600 leading-relaxed mb-6">
+              Since 1972, Tesla Transformers has been shaping India’s power sector
+              with innovation, trust, and proven reliability.
+            </p>
+
+            <div className="mt-auto">
+              <Link href="/about">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg">
+                  Read More
                 </Button>
-              </CardContent>
-            </Card>
-            </ScrollReveal>
+              </Link>
+            </div>
 
-            <ScrollReveal animation="scale" delay={200}>
-            <Card className="text-center p-6 md:p-8 border-0 shadow-xl bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <CardContent className="p-0 relative z-10">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                  <Shield className="h-8 w-8 md:h-10 md:w-10 text-white" />
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our Services</h3>
-                <p className="text-base md:text-lg font-semibold text-green-600 mb-2">Comprehensive Solutions</p>
-                <p className="text-sm md:text-base text-gray-600 leading-relaxed pb-11">
-                  Our offerings include manufacturing, large-scale projects, global exports, and dependable after-sales services.</p>
+          </CardContent>
+        </Card>
+      </ScrollReveal>
 
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-transform hover:scale-105 ">
-                  <Link href="/services" target="_blank">
-                    Read More
-                  </Link>
+      {/* CARD 2 */}
+      <ScrollReveal animation="scale" delay={200}>
+        <Card className="h-full flex flex-col border-0 shadow-xl bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden">
+          <CardContent className="p-8 flex flex-col h-full text-center">
+
+            <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <Shield className="h-10 w-10 text-white" />
+            </div>
+
+            <h3 className="text-3xl font-bold text-gray-900 mb-2">
+              Our Services
+            </h3>
+
+            <p className="text-lg font-semibold text-green-600 mb-4">
+              Comprehensive Solutions
+            </p>
+
+            <p className="text-gray-600 leading-relaxed mb-6">
+              Manufacturing, turnkey substations, exports, and dependable
+              after-sales support across the globe.
+            </p>
+
+            <div className="mt-auto">
+              <Link href="/services">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg">
+                  Read More
                 </Button>
-              </CardContent>
-            </Card>
-            </ScrollReveal>
+              </Link>
+            </div>
 
-            <ScrollReveal animation="scale" delay={300}>
-            <Card className="text-center p-6 md:p-8 border-0 shadow-xl bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <CardContent className="p-0 relative z-10">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                  <Globe className="h-8 w-8 md:h-10 md:w-10 text-white" />
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our Portfolio</h3>
-                <p className="text-base md:text-lg font-semibold text-purple-600 mb-2">Global Reach</p>
-                <p className="text-sm md:text-base text-gray-600 leading-relaxed pb-16">
-                  Backed by approvals from major clients, Tesla's portfolio includes diverse transformer models and test reports.Backed by approvals from major clients, Tesla's portfolio includes diverse transformer models and test reports.                </p>
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-transform hover:scale-105 ">
-                  <Link href="/company" target="_blank">
-                    Read More
-                  </Link>
+          </CardContent>
+        </Card>
+      </ScrollReveal>
+
+      {/* CARD 3 */}
+      <ScrollReveal animation="scale" delay={300}>
+        <Card className="h-full flex flex-col border-0 shadow-xl bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden">
+          <CardContent className="p-8 flex flex-col h-full text-center">
+
+            <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <Globe className="h-10 w-10 text-white" />
+            </div>
+
+            <h3 className="text-3xl font-bold text-gray-900 mb-2">
+              Our Portfolio
+            </h3>
+
+            <p className="text-lg font-semibold text-purple-600 mb-4">
+              Global Reach
+            </p>
+
+            <p className="text-gray-600 leading-relaxed mb-6">
+              Approved by leading utilities and industries worldwide with a
+              diverse range of transformer solutions.
+            </p>
+
+            <div className="mt-auto">
+              <Link href="/company">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg">
+                  Read More
                 </Button>
-              </CardContent>
-            </Card>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
+              </Link>
+            </div>
 
+          </CardContent>
+        </Card>
+      </ScrollReveal>
 
+    </div>
+  </div>
+</section>
 
       <section className="py-12 md:py-16 bg-gradient-to-br from-white via-gray-50/30 to-white relative overflow-hidden ">
 
