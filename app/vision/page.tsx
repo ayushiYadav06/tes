@@ -314,10 +314,7 @@ export default function VisionPage() {
               <Card className="shadow-xl border-0 bg-white/70 backdrop-blur-sm">
                 <CardContent className="p-8 md:p-12">
                   <p className="text-xl md:text-2xl text-green-700 leading-relaxed font-medium italic">
-                    " To be recognized globally as the most trusted and innovative transformer
-                    manufacturer, contributing to a sustainable energy future. We envision a world
-                    where our solutions enable efficient power transmission and distribution,
-                    supporting economic growth while protecting the environment for future generations."
+                    "Our vision is to become a world class Organization and to manufacture world class equipment's with total focus on customer satisfaction."
                   </p>
                 </CardContent>
               </Card>

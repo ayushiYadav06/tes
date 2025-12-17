@@ -975,11 +975,11 @@ export default function ProjectsPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
                 {/* About Project Division */}
-                <Card className="shadow-xl border-0 hover:shadow-2xl transition-transform hover:scale-[1.02] bg-white/80 backdrop-blur">
-                  <CardContent className="p-6">
+                <Card className="h-full shadow-xl border-0 hover:shadow-2xl transition-transform hover:scale-[1.02] bg-white/80 backdrop-blur">
+                  <CardContent className="p-6 flex flex-col h-full">
                     <h3 className="text-xl font-bold text-blue-900 mb-3">About Project Division</h3>
-                    <p className="text-gray-700 text-sm">
-                      Specializing in turnkey projects for substations & transmission lines up to 400 kV.
+                    <p className="text-gray-700 text-sm flex-1">
+                      Specializing in turnkey projects for grid substations and transmission lines up to 400 kV, including design, supply, construction, and commissioning.
                     </p>
                     <Button className="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white" onClick={() => setOpenCard("about")}>
                       Read More
@@ -988,10 +988,10 @@ export default function ProjectsPage() {
                 </Card>
 
                 {/* Project Strength */}
-                <Card className="shadow-xl border-0 hover:shadow-2xl transition-transform hover:scale-[1.02] bg-white/80 backdrop-blur">
-                  <CardContent className="p-6">
+                <Card className="h-full shadow-xl border-0 hover:shadow-2xl transition-transform hover:scale-[1.02] bg-white/80 backdrop-blur">
+                  <CardContent className="p-6 flex flex-col h-full">
                     <h3 className="text-xl font-bold text-blue-900 mb-3">Project Strength</h3>
-                    <p className="text-gray-700 text-sm pb-5">Comprehensive solutions with ISO-certified quality assurance.</p>
+                    <p className="text-gray-700 text-sm pb-5 flex-1">Comprehensive solutions with single-point responsibility, experienced workforce, and ISO-certified quality assurance.</p>
                     <Button className="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white" onClick={() => setOpenCard("strength")}>
                       Read More
                     </Button>
@@ -999,10 +999,10 @@ export default function ProjectsPage() {
                 </Card>
 
                 {/* Our Strategy */}
-                <Card className="shadow-xl border-0 hover:shadow-2xl transition-transform hover:scale-[1.02] bg-white/80 backdrop-blur">
-                  <CardContent className="p-6">
+                <Card className="h-full shadow-xl border-0 hover:shadow-2xl transition-transform hover:scale-[1.02] bg-white/80 backdrop-blur">
+                  <CardContent className="p-6 flex flex-col h-full">
                     <h3 className="text-xl font-bold text-blue-900 mb-3">Our Strategy</h3>
-                    <p className="text-gray-700 text-sm">Focused on profitable growth, partnerships, and customer satisfaction.</p>
+                    <p className="text-gray-700 text-sm flex-1">Focused on profitable growth through strategic partnerships, continuous quality improvement, and customer satisfaction.</p>
                     <Button className="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white" onClick={() => setOpenCard("strategy")}>
                       Read More
                     </Button>
@@ -1010,10 +1010,10 @@ export default function ProjectsPage() {
                 </Card>
 
                 {/* Capacity & Capabilities */}
-                <Card className="shadow-xl border-0 hover:shadow-2xl transition-transform hover:scale-[1.02] bg-white/80 backdrop-blur">
-                  <CardContent className="p-6">
+                <Card className="h-full shadow-xl border-0 hover:shadow-2xl transition-transform hover:scale-[1.02] bg-white/80 backdrop-blur">
+                  <CardContent className="p-6 flex flex-col h-full">
                     <h3 className="text-xl font-bold text-blue-900 mb-3">Capacity & Capabilities</h3>
-                    <p className="text-gray-700 text-sm">Single-window solutions for substations, transmission, and power plants.</p>
+                    <p className="text-gray-700 text-sm flex-1">Single-window solutions for substation construction, transmission lines, system upgrades, and power plant construction.</p>
                     <Button className="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white" onClick={() => setOpenCard("capacity")}>
                       Read More
                     </Button>

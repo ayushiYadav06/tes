@@ -256,7 +256,7 @@ export default function MissionPage() {
           <Card className="text-card-foreground flex flex-col gap-6 rounded-xl py-6  border-0 bg-[rgba(241, 241, 241, 0.99)] hover:shadow-blue-300/40 transition transform hover:scale-[1.02]">
             <CardContent className="p-10 md:p-14">
               <p className="text-xl md:text-2xl text-white leading-relaxed font-bold italic">
-                “Our mission is to consistently fulfill customer needs with unwavering focus, innovation, and uncompromising quality. We strive to deliver products of the highest standard, complemented by service excellence that sets benchmarks in our industry. As a trusted partner and reliable employer, we are dedicated to fostering enduring relationships, achieving sustainable growth, and unlocking new opportunities that strengthen both our customers’ success and our own.”
+                “Our mission is to profitably meet the needs of our customers through Focused, Innovative, High Quality products accompanied by the best customer service in our industry while being recognized as a trusted, reliable supplier and employer achieving steady growth by retaining our customers and discovering new business opportunities”
               </p>
             </CardContent>
           </Card>
