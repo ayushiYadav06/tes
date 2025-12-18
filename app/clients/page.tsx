@@ -320,7 +320,8 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import Image from 'next/image'
 import { X, ChevronRight } from "lucide-react"
 import ClientsCarousel from "@/components/ClientsCarousel"
 
@@ -437,6 +438,16 @@ export default function ClientsPage() {
   const openModal = (card: CategoryCard) => setSelectedCard(card)
   const closeModal = () => setSelectedCard(null)
 
+  // Preload category images to improve perceived load time
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const imgs = CATEGORY_CARDS.map((c) => c.image)
+    imgs.forEach((src) => {
+      const img = new window.Image()
+      img.src = src
+    })
+  }, [])
+
   return (
     <div className="min-h-screen relative overflow-hidden">
 
@@ -475,8 +486,15 @@ export default function ClientsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {CATEGORY_CARDS.map((card, idx) => (
                 <Card key={idx} className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
-                  <div className="h-40 w-full overflow-hidden">
-                    <img src={card.image} alt={card.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                  <div className="h-40 w-full overflow-hidden relative">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      width={1200}
+                      height={480}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                    />
                   </div>
 
                   <CardContent className="p-6 flex-grow flex flex-col">
@@ -507,8 +525,15 @@ export default function ClientsPage() {
         {selectedCard && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
             <div className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
-              <div className="relative">
-                <img src={selectedCard.image} alt={selectedCard.title} className="w-full h-48 md:h-64 object-cover" />
+                <div className="relative">
+                <Image
+                  src={selectedCard.image}
+                  alt={selectedCard.title}
+                  width={1400}
+                  height={600}
+                  className="w-full h-48 md:h-64 object-cover"
+                  priority
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <button
                   onClick={closeModal}

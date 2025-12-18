@@ -9,23 +9,23 @@ export default function PrivacyPolicy() {
           <Header />
 
       {/* Header Section */}
-      <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white relative overflow-hidden">
+      <div className="bg-gradient-to-r from-orange-900 via-orange-700 to-orange-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-300 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-orange-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-80 h-80 bg-orange-300 rounded-full blur-3xl"></div>
         </div>
         
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
           <div className="flex items-center justify-center mb-6">
-            <Shield className="h-16 w-16 text-blue-300" />
+            <Shield className="h-16 w-16 text-orange-300" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
             Privacy Policy
           </h1>
-          <p className="text-xl text-center text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-center text-orange-100 max-w-3xl mx-auto">
             Tesla Transformers (India) Ltd. is committed to protecting your privacy and ensuring the security of your personal information.
           </p>
-          <p className="text-center text-blue-200 mt-4">
+          <p className="text-center text-orange-200 mt-4">
             Last Updated: November 11, 2025
           </p>
         </div>

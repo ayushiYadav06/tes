@@ -78,8 +78,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Preload important images for faster LCP */}
+        <link rel="preload" as="image" href="/plant 3.jpg" />
+        <link rel="preload" as="image" href="/plant 2.jpg" />
+        <link rel="preload" as="image" href="/plant 1.jpg" />
+        <link rel="preload" as="image" href="/airport.jpg" />
+        <link rel="preload" as="image" href="/industrial-electrical-manufacturing-facility.jpg" />
+      </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-          <CustomCursor /> {/* Add this line */}
+        <CustomCursor /> {/* Add this line */}
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>

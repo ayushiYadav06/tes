@@ -89,6 +89,16 @@ export default function HomePage() {
     return () => clearInterval(interval)
   }, [])
 
+  // Preload hero background images for smoother transitions
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const imgs = ['/plant 3.jpg', '/plant 2.jpg', '/plant 1.jpg']
+    imgs.forEach((s) => {
+      const i = new Image()
+      i.src = s
+    })
+  }, [])
+
   return (
     <div className="min-h-screen bg-white">
 
@@ -288,6 +298,8 @@ export default function HomePage() {
               <div className={`w-3 h-3 rounded-full ${currentIndex === 2 ? "bg-blue-400 scale-125" : "bg-white/40"}`}></div>
             </div>
           </section>
+
+          
 
           <section className="py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
 

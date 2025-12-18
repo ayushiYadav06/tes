@@ -124,3 +124,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Hero background transition improvements */
+.hero-zoom {
+  transition: opacity 900ms cubic-bezier(.22,.9,.38,1), transform 900ms cubic-bezier(.22,.9,.38,1);
+  will-change: opacity, transform;
+  transform-origin: center center;
+}
+.hero-zoom-active { opacity: 1; transform: scale(1); }
+.hero-zoom-inactive { opacity: 0; transform: scale(1.04); pointer-events: none; }
