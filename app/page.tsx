@@ -105,6 +105,7 @@ export default function HomePage() {
     return () => clearInterval(interval);
   }, []);
 
+
   // Preload hero background images for smoother transitions
   // useEffect(() => {
   //   if (typeof window === "undefined") return;
@@ -133,7 +134,7 @@ export default function HomePage() {
   }`}
 >
   <Image
-    src="/plant-3.jpg"
+    src="/Plant-3.jpg"
     alt="Hero background"
     fill
     priority
@@ -152,7 +153,7 @@ export default function HomePage() {
   }`}
 >
   <Image
-    src="/plant-2.jpg"
+    src="/Plant-2.jpg"
     alt="Hero background"
     fill
     sizes="100vw"

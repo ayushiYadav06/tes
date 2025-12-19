@@ -80,8 +80,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Preload important images for faster LCP */}
-        <link rel="preload" as="image" href="/plant-3.jpg" />
-        <link rel="preload" as="image" href="/plant-2.jpg" />
+        <link rel="preload" as="image" href="/Plant-3.jpg" />
+        <link rel="preload" as="image" href="/Plant-2.jpg" />
         <link rel="preload" as="image" href="/plant-1.jpg" />
         <link rel="preload" as="image" href="/airport.jpg" />
         <link rel="preload" as="image" href="/industrial-electrical-manufacturing-facility.jpg" />
