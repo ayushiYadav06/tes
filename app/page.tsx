@@ -125,9 +125,11 @@ export default function HomePage() {
           <Header />
 
           <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-           <div
+      <div
   className={`absolute inset-0 transition-opacity duration-1000 ${
-    currentIndex === 0 ? "opacity-100" : "opacity-0"
+    currentIndex === 0
+      ? "opacity-100 z-20"
+      : "opacity-0 z-0 pointer-events-none"
   }`}
 >
   <Image
@@ -141,9 +143,12 @@ export default function HomePage() {
   <div className="absolute inset-0 bg-gradient-to-br from-black/80 to-sky-500/20" />
 </div>
 
-        <div
+
+      <div
   className={`absolute inset-0 transition-opacity duration-1000 ${
-    currentIndex === 1 ? "opacity-100" : "opacity-0"
+    currentIndex === 1
+      ? "opacity-100 z-20"
+      : "opacity-0 z-0 pointer-events-none"
   }`}
 >
   <Image
@@ -155,6 +160,7 @@ export default function HomePage() {
   />
   <div className="absolute inset-0 bg-gradient-to-br from-black/80 to-sky-500/20" />
 </div>
+
 
             {/* <div
           className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${currentIndex === 2 ? "opacity-100" : "opacity-0"
