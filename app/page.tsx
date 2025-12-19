@@ -130,7 +130,7 @@ export default function HomePage() {
                   : "hero-zoom-inactive opacity-0"
               }`}
               style={{
-                backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.78), rgba(14,165,233,0.16)), url('/plant 3.jpg')`,
+                backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.78), rgba(14,165,233,0.16)), url('/plant-3.jpg')`,
                 filter: "brightness(0.45) contrast(0.9)",
               }}
             />
@@ -142,7 +142,7 @@ export default function HomePage() {
                   : "hero-zoom-inactive opacity-0"
               }`}
               style={{
-                backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.78), rgba(14,165,233,0.16)), url('/plant 2.jpg')`,
+                backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.78), rgba(14,165,233,0.16)), url('/plant-2.jpg')`,
                 filter: "brightness(0.45) contrast(0.9)",
               }}
             />
