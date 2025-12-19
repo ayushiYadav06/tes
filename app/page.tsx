@@ -5,6 +5,8 @@ import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 // import GlobalExportMap from "@/components/GlobalExportMap"
+import Image from "next/image";
+
 import {
   ArrowRight,
   Zap,
@@ -104,15 +106,15 @@ export default function HomePage() {
   }, []);
 
   // Preload hero background images for smoother transitions
-  useEffect(() => {
-    if (typeof window === "undefined") return;
+  // useEffect(() => {
+  //   if (typeof window === "undefined") return;
 
-    const imgs = ["/plant-1.jpg", "/plant-2.jpg", "/plant-3.jpg"];
-    imgs.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, []);
+  //   const imgs = ["/plant-1.jpg", "/plant-2.jpg", "/plant-3.jpg"];
+  //   imgs.forEach((src) => {
+  //     const img = new Image();
+  //     img.src = src;
+  //   });
+  // }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -123,48 +125,56 @@ export default function HomePage() {
           <Header />
 
           <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-            <div
-              className={`absolute inset-0 bg-cover bg-center bg-no-repeat hero-zoom ${
-                currentIndex === 0
-                  ? "hero-zoom-active opacity-100"
-                  : "hero-zoom-inactive opacity-0"
-              }`}
-              style={{
-                backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.78), rgba(14,165,233,0.16)), url('/plant-3.jpg')`,
-                filter: "brightness(0.45) contrast(0.9)",
-              }}
-            />
+           <div
+  className={`absolute inset-0 transition-opacity duration-1000 ${
+    currentIndex === 0 ? "opacity-100" : "opacity-0"
+  }`}
+>
+  <Image
+    src="/plant-3.jpg"
+    alt="Hero background"
+    fill
+    priority
+    sizes="100vw"
+    className="object-cover brightness-[0.45] contrast-[0.9]"
+  />
+  <div className="absolute inset-0 bg-gradient-to-br from-black/80 to-sky-500/20" />
+</div>
 
-            <div
-              className={`absolute inset-0 bg-cover bg-center bg-no-repeat hero-zoom ${
-                currentIndex === 1
-                  ? "hero-zoom-active opacity-100"
-                  : "hero-zoom-inactive opacity-0"
-              }`}
-              style={{
-                backgroundImage: `linear-gradient(135deg, rgba(0,0,0,0.78), rgba(14,165,233,0.16)), url('/plant-2.jpg')`,
-                filter: "brightness(0.45) contrast(0.9)",
-              }}
-            />
+        <div
+  className={`absolute inset-0 transition-opacity duration-1000 ${
+    currentIndex === 1 ? "opacity-100" : "opacity-0"
+  }`}
+>
+  <Image
+    src="/plant-2.jpg"
+    alt="Hero background"
+    fill
+    sizes="100vw"
+    className="object-cover brightness-[0.45] contrast-[0.9]"
+  />
+  <div className="absolute inset-0 bg-gradient-to-br from-black/80 to-sky-500/20" />
+</div>
+
             {/* <div
           className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${currentIndex === 2 ? "opacity-100" : "opacity-0"
             }`} */}
 
-            <div
-              className={`absolute inset-0 bg-cover bg-center bg-no-repeat hero-zoom ${
-                currentIndex === 2
-                  ? "hero-zoom-active opacity-100"
-                  : "hero-zoom-inactive opacity-0"
-              }`}
-              style={{
-                backgroundImage: `linear-gradient(
-                  135deg,
-                rgba(0,0,0,0.78),
-                rgba(14,165,233,0.16)
-               ), url('/plant-1.jpg')`,
-                filter: "brightness(0.45) contrast(0.9)",
-              }}
-            />
+         <div
+  className={`absolute inset-0 transition-opacity duration-1000 ${
+    currentIndex === 2 ? "opacity-100" : "opacity-0"
+  }`}
+>
+  <Image
+    src="/plant-1.jpg"
+    alt="Hero background"
+    fill
+    sizes="100vw"
+    className="object-cover brightness-[0.45] contrast-[0.9]"
+  />
+  <div className="absolute inset-0 bg-gradient-to-br from-black/80 to-sky-500/20" />
+</div>
+
 
             {/* Enhanced Floating Shapes */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
